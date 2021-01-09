@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import IMDBLogo from "../../images/IMDB_Logo.svg";
 import { Button } from "@material-ui/core";
 export const NomineeItem = (props) => {
@@ -36,7 +36,7 @@ export const NomineeItem = (props) => {
           <Button
             variant="contained"
             onClick={() => {
-              setNominees(nominees.filter((nom) => nom != nominee));
+              setNominees(nominees.filter((nom) => nom !== nominee));
             }}
             style={{ height: 30, marginTop: 5, width: 120, alignSelf: "right" }}
           >

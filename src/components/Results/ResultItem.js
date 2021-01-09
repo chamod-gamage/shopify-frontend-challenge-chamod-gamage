@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import IMDBLogo from "../../images/IMDB_Logo.svg";
 import { Button } from "@material-ui/core";
 export const ResultItem = (props) => {

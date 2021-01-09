@@ -3,7 +3,7 @@ import { DatePicker } from "@material-ui/pickers";
 
 import React, { useState } from "react";
 import { TextField, Button } from "@material-ui/core";
-import { Row, Col, Card, Container } from "react-bootstrap";
+import { Row, Card, Container } from "react-bootstrap";
 import clsx from "clsx";
 
 export default function Search(props) {
@@ -25,7 +25,6 @@ export default function Search(props) {
             <label>Movie Title</label>
             <TextField
               fullWidth
-              //   required
               value={term}
               onChange={(e) => {
                 setTerm(e.target.value);

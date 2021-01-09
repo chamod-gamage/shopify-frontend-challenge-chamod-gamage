@@ -1,6 +1,5 @@
-import React, { useState } from "react";
+import React from "react";
 import { ResultItem } from "./ResultItem";
-import { Grid } from "@material-ui/core";
 import Card from "react-bootstrap/Card";
 import clsx from "clsx";
 import "../../App.css";
