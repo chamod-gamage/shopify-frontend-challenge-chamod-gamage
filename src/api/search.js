@@ -11,14 +11,17 @@ export const searchOMDB = async ({ searchTerm, year, page }) => {
     },
   });
 
-  console.log(res.data);
+  let error =
+    res.data && res.data.Error === "Too many results."
+      ? "your search yielded too many results"
+      : "we could not find results that matched your search";
+
   return res.data && res.data.Search && res.data.totalResults
     ? { results: res.data.Search, total: res.data.totalResults, error: "" }
     : {
         results: [],
         total: 0,
-        error:
-          "Unfortunately, we could not find results that matched your search. Please try again with a different search paramaters.",
+        error: `Unfortunately, ${error}. Please try again with a different search paramaters.`,
       };
 };
 
