@@ -1,14 +1,31 @@
-import "./App.css";
 import Search from "./components/Search";
 import Results from "./components/Results";
 import Nominees from "./components/Nominees";
-import { searchOMDB } from "./api/search";
+import { searchOMDB, getMovie } from "./api/search";
 import "./App.css";
-import React, { useState } from "react";
+import clsx from "clsx";
+import React, { useState, useEffect } from "react";
 
 import moment from "moment";
 
 export const Interface = (props) => {
+  useEffect(() => {
+    console.log("use effect");
+    if (window.location.href.includes("shared=true")) {
+      console.log("includes");
+      const urlParams = new URLSearchParams(window.location.href);
+      console.log(urlParams.getAll("nominees[]"));
+
+      async function fetchMovies() {
+        Promise.all(
+          urlParams.getAll("nominees[]").map((id) => getMovie({ id }))
+        ).then((values) => setNominees(values));
+      }
+
+      fetchMovies();
+    }
+  }, []);
+
   const [nominees, setNominees] = useState([]);
   const [results, setResults] = useState([]);
 
@@ -29,17 +46,22 @@ export const Interface = (props) => {
     <>
       <Search searchOMDB={handleSubmit} />
       <br />
-      <Results
-        results={results}
-        nominees={nominees}
-        setNominees={setNominees}
-      />
-      <br />
-      {nominees.length > 0 ? (
-        <Nominees nominees={nominees} setNominees={setNominees} />
-      ) : (
-        <div />
-      )}
+      <div className={clsx("row", "middle-section")}>
+        <div className="col-md-6">
+          <Results
+            results={results}
+            nominees={nominees}
+            setNominees={setNominees}
+          />
+        </div>
+        <div className="col-md-6">
+          {nominees.length > 0 ? (
+            <Nominees nominees={nominees} setNominees={setNominees} />
+          ) : (
+            <div />
+          )}
+        </div>
+      </div>
     </>
   );
 };

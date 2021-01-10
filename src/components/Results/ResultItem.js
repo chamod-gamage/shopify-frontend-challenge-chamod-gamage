@@ -43,7 +43,11 @@ export const ResultItem = (props) => {
           <Button
             variant="contained"
             disabled={
-              (nominees && nominees.length && nominees.includes(result)) ||
+              (nominees &&
+                nominees.length &&
+                nominees
+                  .map((nominee) => nominee.imdbID)
+                  .includes(result.imdbID)) ||
               nominees.length > 4
             }
             onClick={handleNomination}
