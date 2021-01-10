@@ -34,9 +34,11 @@ export const Interface = (props) => {
   const [page, setPage] = useState(1);
   const [total, setTotal] = useState(0);
   const [pending, setPending] = useState(false);
+  const [error, setError] = useState("");
 
   const handleSubmit = async ({ searchTerm, year, pageNumber }) => {
     setPending(true);
+    setError("");
     setPage(pageNumber);
     let payload = moment(year).isValid()
       ? {
@@ -49,6 +51,7 @@ export const Interface = (props) => {
     console.log(JSON.stringify(res));
     setResults(res.results);
     setTotal(res.total);
+    setError(res.error);
     setPending(false);
     return;
   };
@@ -73,6 +76,7 @@ export const Interface = (props) => {
       <div className={clsx("row", "middle-section")}>
         <div className="col-md-6">
           <Results
+            error={error}
             loading={pending}
             total={total}
             page={page}

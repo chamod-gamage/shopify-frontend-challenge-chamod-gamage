@@ -14,6 +14,7 @@ export default function Results(props) {
     page,
     handlePageChange,
     total,
+    error,
   } = props;
 
   return (
@@ -21,7 +22,9 @@ export default function Results(props) {
       <SectionHeader text="Results" />
       <Card className={clsx("column", "box")}>
         <Container>
-          {loading ? (
+          {error !== "" ? (
+            <p>{error}</p>
+          ) : loading ? (
             <p>Awaiting results...</p>
           ) : (
             <>

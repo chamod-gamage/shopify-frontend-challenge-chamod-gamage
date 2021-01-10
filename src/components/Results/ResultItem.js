@@ -24,7 +24,7 @@ export const ResultItem = (props) => {
             target="_blank"
             rel="noreferrer"
           >
-            <img style={{ width: 60 }} src={IMDBLogo} alt="IMDB logo" />
+            <img style={{ width: 40 }} src={IMDBLogo} alt="IMDB logo" />
           </a>
           &nbsp;
           <Button
