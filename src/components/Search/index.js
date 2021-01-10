@@ -7,9 +7,7 @@ import { Row, Card, Container } from "react-bootstrap";
 import clsx from "clsx";
 
 export default function Search(props) {
-  const { searchOMDB, term, setTerm } = props;
-
-  const [year, setYear] = useState(null);
+  const { searchOMDB, term, setTerm, year, setYear } = props;
 
   return (
     <>
@@ -72,7 +70,9 @@ export default function Search(props) {
                   variant="contained"
                   disabled={term.length === 0}
                   style={{ width: "100%" }}
-                  onClick={() => searchOMDB({ searchTerm: term, year })}
+                  onClick={() =>
+                    searchOMDB({ searchTerm: term, year, pageNumber: 1 })
+                  }
                 >
                   Search
                 </Button>

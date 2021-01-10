@@ -30,24 +30,39 @@ export const Interface = (props) => {
   const [nominees, setNominees] = useState([]);
   const [results, setResults] = useState([]);
   const [term, setTerm] = useState("");
+  const [year, setYear] = useState(null);
+  const [page, setPage] = useState(1);
+  const [total, setTotal] = useState(0);
+  const [pending, setPending] = useState(false);
 
-  const handleSubmit = async ({ searchTerm, year }) => {
+  const handleSubmit = async ({ searchTerm, year, pageNumber }) => {
+    setPending(true);
+    setPage(pageNumber);
     let payload = moment(year).isValid()
       ? {
           searchTerm,
           year: moment(year).format("YYYY"),
+          page: pageNumber,
         }
-      : { searchTerm };
+      : { searchTerm, page: pageNumber };
     let res = await searchOMDB(payload);
     console.log(JSON.stringify(res));
-    setResults(res);
+    setResults(res.results);
+    setTotal(res.total);
+    setPending(false);
     return;
   };
 
   return (
     <>
       <br />
-      <Search term={term} setTerm={setTerm} searchOMDB={handleSubmit} />
+      <Search
+        year={year}
+        setYear={setYear}
+        term={term}
+        setTerm={setTerm}
+        searchOMDB={handleSubmit}
+      />
       <br />
       {nominees.length > 4 && (
         <>
@@ -58,18 +73,21 @@ export const Interface = (props) => {
       <div className={clsx("row", "middle-section")}>
         <div className="col-md-6">
           <Results
-            term={term}
+            loading={pending}
+            total={total}
+            page={page}
+            handlePageChange={(pageNumber) => {
+              pageNumber > 0 &&
+                pageNumber <= Math.ceil(total / 10) &&
+                handleSubmit({ searchTerm: term, year, pageNumber });
+            }}
             results={results}
             nominees={nominees}
             setNominees={setNominees}
           />
         </div>
         <div className="col-md-6">
-          {nominees.length > 0 ? (
-            <Nominees nominees={nominees} setNominees={setNominees} />
-          ) : (
-            <div />
-          )}
+          <Nominees nominees={nominees} setNominees={setNominees} />
         </div>
       </div>
     </>

@@ -16,6 +16,12 @@ export default function Nominees(props) {
         <Container>
           {nominees.length ? (
             <>
+              <div style={{ height: 5 }} />
+              {nominees.length < 5 ? (
+                <p>{5 - nominees.length} movies to go!</p>
+              ) : (
+                <p>Nomination List Complete!</p>
+              )}
               {nominees.map((nominee) => (
                 <NomineeItem
                   nominee={nominee}
@@ -23,11 +29,7 @@ export default function Nominees(props) {
                   setNominees={setNominees}
                 />
               ))}
-              {nominees.length < 5 ? (
-                <p>{5 - nominees.length} movies to go!</p>
-              ) : (
-                <p>Nomination List Complete!</p>
-              )}
+
               {/* <LinkDialog nominees={nominees} /> */}
               {/* <div style={{ height: 10 }} /> */}
             </>
