@@ -11,16 +11,19 @@ import moment from "moment";
 
 export const Interface = (props) => {
   useEffect(() => {
-    console.log("use effect");
     if (window.location.href.includes("shared=true")) {
-      console.log("includes");
+      setProcessing(true);
       const urlParams = new URLSearchParams(window.location.href);
-      console.log(urlParams.getAll("nominees[]"));
 
       async function fetchMovies() {
+        setProcessing(true);
         Promise.all(
           urlParams.getAll("nominees[]").map((id) => getMovie({ id }))
-        ).then((values) => setNominees(values));
+        ).then((values) => {
+          setNominees(values);
+          setProcessing(false);
+          return;
+        });
       }
 
       fetchMovies();
@@ -35,6 +38,7 @@ export const Interface = (props) => {
   const [total, setTotal] = useState(0);
   const [pending, setPending] = useState(false);
   const [error, setError] = useState("");
+  const [processing, setProcessing] = useState(false);
 
   const handleSubmit = async ({ searchTerm, year, pageNumber }) => {
     setPending(true);
@@ -91,7 +95,11 @@ export const Interface = (props) => {
           />
         </div>
         <div className="col-md-6">
-          <Nominees nominees={nominees} setNominees={setNominees} />
+          <Nominees
+            loading={processing}
+            nominees={nominees}
+            setNominees={setNominees}
+          />
         </div>
       </div>
     </>

@@ -7,14 +7,16 @@ import clsx from "clsx";
 import "../../App.css";
 
 export default function Nominees(props) {
-  const { nominees, setNominees } = props;
+  const { nominees, setNominees, loading } = props;
 
   return (
     <>
       <SectionHeader text={"Nominees"} />
       <Card className={clsx("column", "box")}>
         <Container>
-          {nominees.length ? (
+          {loading ? (
+            <p>Loading...</p>
+          ) : nominees.length ? (
             <>
               <div style={{ height: 5 }} />
               {nominees.length < 5 ? (
