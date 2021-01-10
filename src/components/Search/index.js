@@ -24,7 +24,7 @@ export default function Search(props) {
             }}
           >
             <div className="col-sm-12 col-md-6">
-              <label>Movie Title</label>
+              <label>Movie Title*</label>
               <TextField
                 //   label="Movie Title"
                 //   InputLabelProps={{
