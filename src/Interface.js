@@ -46,6 +46,7 @@ export const Interface = (props) => {
 
   return (
     <>
+      <br />
       <Search term={term} setTerm={setTerm} searchOMDB={handleSubmit} />
       <br />
       {nominees.length > 4 && (

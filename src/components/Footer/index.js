@@ -3,13 +3,14 @@ import LinkedInIcon from "@material-ui/icons/LinkedIn";
 import InstagramIcon from "@material-ui/icons/Instagram";
 import MailIcon from "@material-ui/icons/Mail";
 import React, { Fragment } from "react";
+import SectionHeader from "../SectionHeader";
 import "../../App.css";
 const Footer = React.memo(() => {
   return (
     <Fragment>
-      <h2>
-        Made by <mark>Chamod Gamage</mark>
-      </h2>
+      <br />
+      <SectionHeader text="Made by Chamod Gamage" />
+
       <h1>
         {" "}
         <a
