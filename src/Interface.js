@@ -30,7 +30,9 @@ export const Interface = (props) => {
     }
   }, []);
 
-  const [nominees, setNominees] = useState([]);
+  const [nominees, setNominees] = useState(
+    JSON.parse(localStorage.getItem("nominees")) || []
+  );
   const [results, setResults] = useState([]);
   const [term, setTerm] = useState("");
   const [year, setYear] = useState(null);
@@ -39,6 +41,12 @@ export const Interface = (props) => {
   const [pending, setPending] = useState(false);
   const [error, setError] = useState("");
   const [processing, setProcessing] = useState(false);
+
+  useEffect(() => {
+    nominees &&
+      nominees.length &&
+      localStorage.setItem("nominees", JSON.stringify(nominees));
+  }, [nominees]);
 
   const handleSubmit = async ({ searchTerm, year, pageNumber }) => {
     setPending(true);
@@ -52,7 +60,6 @@ export const Interface = (props) => {
         }
       : { searchTerm, page: pageNumber };
     let res = await searchOMDB(payload);
-    console.log(JSON.stringify(res));
     setResults(res.results);
     setTotal(res.total);
     setError(res.error);
@@ -93,6 +100,7 @@ export const Interface = (props) => {
             nominees={nominees}
             setNominees={setNominees}
           />
+          <br />
         </div>
         <div className="col-md-6">
           <Nominees
