@@ -11,7 +11,7 @@ export default function Nominees(props) {
 
   return (
     <>
-      <SectionHeader text={"Your Nominees"} />
+      <SectionHeader text={"Nominees"} />
       <Card className={clsx("column", "box")}>
         <Container>
           {nominees.length ? (

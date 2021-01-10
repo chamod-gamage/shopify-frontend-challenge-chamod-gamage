@@ -28,7 +28,7 @@ export default function Search(props) {
                 //   InputLabelProps={{
                 //     style: { fontSize: 20, fontFamily: "Questrial" },
                 //   }}
-                inputProps={{ style: { fontSize: 24 } }}
+                inputProps={{ style: { fontSize: 18 } }}
                 fullWidth
                 value={term}
                 onChange={(e) => {
@@ -44,7 +44,7 @@ export default function Search(props) {
                 //   InputLabelProps={{
                 //     style: { fontSize: 20, fontFamily: "Questrial" },
                 //   }}
-                inputProps={{ style: { fontSize: 24 } }}
+                inputProps={{ style: { fontSize: 18 } }}
                 variant="inline"
                 openTo="year"
                 views={["year"]}

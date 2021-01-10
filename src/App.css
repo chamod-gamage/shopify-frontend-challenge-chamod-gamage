@@ -30,12 +30,13 @@ label {
   margin-bottom: 5px;
   margin-top: 5px;
   color: black;
-  font-size: 18px;
+  font-size: 0.6em;
   font-weight: 200;
 }
 
 p {
   font-family: "Questrial";
+  font-size: 0.8em;
   font-weight: 600;
 }
 
@@ -125,14 +126,14 @@ mark {
 
 h1 {
   font-family: "Nunito Sans";
-  font-size: 2em;
+  font-size: 1.8em;
   font-weight: 400;
   color: #dec300;
 }
 
 h2 {
   font-family: "Nunito Sans";
-  font-size: 1.2em;
+  font-size: 1em;
   font-weight: 700;
   color: black;
 }
