@@ -1,6 +1,7 @@
 import React from "react";
 import IMDBLogo from "../../images/IMDB_Logo.svg";
 import { Button } from "@material-ui/core";
+import "../../App.css";
 export const ResultItem = (props) => {
   const { result, nominees, setNominees } = props;
 
@@ -12,32 +13,18 @@ export const ResultItem = (props) => {
   };
   return (
     <>
-      <div
-        style={{
-          display: "flex",
-          justifyContent: "space-between",
-          textAlign: "left",
-          padding: 5,
-        }}
-      >
-        <div style={{ display: "flex", justifyContent: "start", padding: 5 }}>
-          {`${result.Title} (${result.Year})`}
+      <div className="row-item">
+        <div className="row-text">
+          <p>{`${result.Title} (${result.Year})`}</p>
           &nbsp;
         </div>
-        <div
-          style={{
-            alignSelf: "right",
-            alignItems: "center",
-            display: "flex",
-            flexDirection: "row",
-          }}
-        >
+        <div className="row-buttons">
           <a
             href={`https://www.imdb.com/title/${result.imdbID}`}
             target="_blank"
             rel="noreferrer"
           >
-            <img style={{ width: 40 }} src={IMDBLogo} alt="IMDB logo" />
+            <img style={{ width: 60 }} src={IMDBLogo} alt="IMDB logo" />
           </a>
           &nbsp;
           <Button
@@ -51,7 +38,7 @@ export const ResultItem = (props) => {
               nominees.length > 4
             }
             onClick={handleNomination}
-            style={{ height: 30, marginTop: 5, width: 120 }}
+            className="row-buttons-end"
           >
             NOMINATE
           </Button>

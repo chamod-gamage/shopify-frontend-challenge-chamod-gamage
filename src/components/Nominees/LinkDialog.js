@@ -97,7 +97,9 @@ export default function LinkDialog(props) {
 
   return (
     <div className={classes.root}>
-      <Button onClick={handleOpen}>Generate Shareable Link</Button>
+      <Button fullWidth variant="contained" onClick={handleOpen}>
+        Generate Shareable Link
+      </Button>
       <DialogRaw
         classes={{
           paper: classes.paper,

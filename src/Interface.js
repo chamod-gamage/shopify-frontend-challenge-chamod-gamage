@@ -1,6 +1,7 @@
 import Search from "./components/Search";
 import Results from "./components/Results";
 import Nominees from "./components/Nominees";
+import LinkDialog from "./components/Nominees/LinkDialog";
 import { searchOMDB, getMovie } from "./api/search";
 import "./App.css";
 import clsx from "clsx";
@@ -28,6 +29,7 @@ export const Interface = (props) => {
 
   const [nominees, setNominees] = useState([]);
   const [results, setResults] = useState([]);
+  const [term, setTerm] = useState("");
 
   const handleSubmit = async ({ searchTerm, year }) => {
     let payload = moment(year).isValid()
@@ -44,11 +46,13 @@ export const Interface = (props) => {
 
   return (
     <>
-      <Search searchOMDB={handleSubmit} />
+      <Search term={term} setTerm={setTerm} searchOMDB={handleSubmit} />
       <br />
+      {nominees.length > 4 && <LinkDialog nominees={nominees} />}
       <div className={clsx("row", "middle-section")}>
         <div className="col-md-6">
           <Results
+            term={term}
             results={results}
             nominees={nominees}
             setNominees={setNominees}
