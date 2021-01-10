@@ -48,7 +48,12 @@ export const Interface = (props) => {
     <>
       <Search term={term} setTerm={setTerm} searchOMDB={handleSubmit} />
       <br />
-      {nominees.length > 4 && <LinkDialog nominees={nominees} />}
+      {nominees.length > 4 && (
+        <>
+          <LinkDialog nominees={nominees} />
+          <br />
+        </>
+      )}
       <div className={clsx("row", "middle-section")}>
         <div className="col-md-6">
           <Results
