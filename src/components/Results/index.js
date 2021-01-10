@@ -25,7 +25,10 @@ export default function Results(props) {
           {error !== "" ? (
             <p>{error}</p>
           ) : loading ? (
-            <p>Awaiting results...</p>
+            <>
+              <p>Awaiting results...</p>
+              <div style={{ height: 900 }} />
+            </>
           ) : (
             <>
               {!results || results.length === 0 ? (
