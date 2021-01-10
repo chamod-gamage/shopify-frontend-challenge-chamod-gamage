@@ -55,6 +55,20 @@ p {
   flex-direction: "row";
 }
 
+.flexrow {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.search-btn {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  float: left;
+  align-items: baseline;
+}
+
 .full {
   width: "100%";
 }
