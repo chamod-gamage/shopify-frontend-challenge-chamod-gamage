@@ -10,6 +10,7 @@ import React, { useState, useEffect } from "react";
 import moment from "moment";
 
 export const Interface = (props) => {
+  //useEffect parses URL for encoded nominees list, if list's been encoded
   useEffect(() => {
     if (window.location.href.includes("shared=true")) {
       setProcessing(true);
@@ -30,6 +31,7 @@ export const Interface = (props) => {
     }
   }, []);
 
+  //grab nominees from localstorage, if not there nominees = []
   const [nominees, setNominees] = useState(
     JSON.parse(localStorage.getItem("nominees")) || []
   );
@@ -38,10 +40,11 @@ export const Interface = (props) => {
   const [year, setYear] = useState(null);
   const [page, setPage] = useState(1);
   const [total, setTotal] = useState(0);
-  const [pending, setPending] = useState(false);
+  const [pending, setPending] = useState(false); //true if awaiting results
   const [error, setError] = useState("");
-  const [processing, setProcessing] = useState(false);
+  const [processing, setProcessing] = useState(false); //true if awaiting nominees from URL or localstorage
 
+  //useEffect to set localstorage item for nominees whenever nominees (in state) changes
   useEffect(() => {
     nominees &&
       nominees.length &&

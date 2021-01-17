@@ -5,6 +5,8 @@ import MailIcon from "@material-ui/icons/Mail";
 import React, { Fragment } from "react";
 import SectionHeader from "../SectionHeader";
 import "../../App.css";
+
+//Just my info :)
 const Footer = React.memo(() => {
   return (
     <Fragment>

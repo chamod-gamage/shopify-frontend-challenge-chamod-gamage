@@ -7,6 +7,7 @@ import Dialog from "@material-ui/core/Dialog";
 import { Card, Container } from "react-bootstrap";
 import clsx from "clsx";
 
+//Dialog allowing user to copy generated link to share nominee list
 function DialogRaw(props) {
   const { onClose, value, open } = props;
   const [copied, setCopied] = useState(false);
@@ -48,6 +49,7 @@ export default function LinkDialog(props) {
   const [open, setOpen] = React.useState(false);
   const [value, setValue] = React.useState("Dione");
 
+  //Function to Encode URL with nominee list
   const generateLink = () => {
     console.log(nominees);
     return `${process.env.REACT_APP_URL}?shared=true&${nominees
@@ -77,7 +79,7 @@ export default function LinkDialog(props) {
         </Button>
         <div style={{ height: 10 }} />
         <DialogRaw
-          id="ringtone-menu"
+          id="link-copy"
           keepMounted
           open={open}
           onClose={handleClose}

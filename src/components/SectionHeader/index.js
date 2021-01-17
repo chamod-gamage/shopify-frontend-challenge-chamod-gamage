@@ -1,6 +1,7 @@
 import "../../App.css";
 import React from "react";
 
+//Reusable components for Section Headings (e.g Results)
 const SectionHeader = (props) => (
   <div className="column">
     <div className="section-header">

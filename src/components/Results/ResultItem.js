@@ -2,13 +2,13 @@ import React from "react";
 import IMDBLogo from "../../images/IMDB_Logo.svg";
 import { Button } from "@material-ui/core";
 import "../../App.css";
+
+//what each row in the results column contains
 export const ResultItem = (props) => {
   const { result, nominees, setNominees } = props;
 
   const handleNomination = () => {
-    console.log(nominees);
     setNominees(nominees ? nominees.concat([result]) : [result]);
-    console.log(nominees);
     return;
   };
   return (

@@ -7,6 +7,7 @@ import { TextField, Button, IconButton } from "@material-ui/core";
 import { Row, Card, Container } from "react-bootstrap";
 import clsx from "clsx";
 
+//Search section with fields
 export default function Search(props) {
   const { searchOMDB, term, setTerm, year, setYear } = props;
 
@@ -20,10 +21,6 @@ export default function Search(props) {
               <label>Movie Title*</label>
               <div className="flexrow">
                 <TextField
-                  //   label="Movie Title"
-                  //   InputLabelProps={{
-                  //     style: { fontSize: 20, fontFamily: "Questrial" },
-                  //   }}
                   inputProps={{ style: { fontSize: 18 } }}
                   fullWidth
                   value={term}
@@ -38,7 +35,6 @@ export default function Search(props) {
                   }}
                 />
                 <IconButton
-                  // style={{ padding: 0 }}
                   edge="end"
                   size="small"
                   disabled={term === ""}
@@ -52,22 +48,15 @@ export default function Search(props) {
               <label>Year Released</label>
               <div className="flexrow">
                 <DatePicker
-                  //   label="Year Released"
-                  //   InputLabelProps={{
-                  //     style: { fontSize: 20, fontFamily: "Questrial" },
-                  //   }}
                   inputProps={{ style: { fontSize: 18 } }}
                   variant="inline"
                   openTo="year"
                   views={["year"]}
                   style={{ flexGrow: 1 }}
-                  //   label="Year and Month"
-                  //   helperText="Start from year selection"
                   value={year}
                   onChange={setYear}
                 />
                 <IconButton
-                  // style={{ padding: 0 }}
                   edge="end"
                   size="small"
                   disabled={!year}

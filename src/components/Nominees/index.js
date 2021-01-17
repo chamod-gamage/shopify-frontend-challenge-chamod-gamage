@@ -31,9 +31,6 @@ export default function Nominees(props) {
                   setNominees={setNominees}
                 />
               ))}
-
-              {/* <LinkDialog nominees={nominees} /> */}
-              {/* <div style={{ height: 10 }} /> */}
             </>
           ) : (
             <div>

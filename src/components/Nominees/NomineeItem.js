@@ -2,6 +2,8 @@ import React from "react";
 import IMDBLogo from "../../images/IMDB_Logo.svg";
 import { Button } from "@material-ui/core";
 import "../../App.css";
+
+//What each row in the nominees list shows
 export const NomineeItem = (props) => {
   const { nominee, nominees, setNominees } = props;
   return (
