@@ -25,8 +25,6 @@ export default function Search(props) {
                   fullWidth
                   value={term}
                   onKeyDown={(e) => {
-                    console.log(e);
-                    console.log(e.keyCode);
                     e.keyCode === 13 &&
                       searchOMDB({ searchTerm: term, year, pageNumber: 1 });
                   }}

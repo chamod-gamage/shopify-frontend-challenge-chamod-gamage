@@ -51,7 +51,6 @@ export default function LinkDialog(props) {
 
   //Function to Encode URL with nominee list
   const generateLink = () => {
-    console.log(nominees);
     return `${process.env.REACT_APP_URL}?shared=true&${nominees
       .map((nominee) => `nominees[]=${nominee.imdbID}&`)
       .join("")}`;

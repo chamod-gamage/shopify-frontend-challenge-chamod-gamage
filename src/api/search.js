@@ -1,5 +1,6 @@
 import axios from "axios";
 
+//Search OMDB given search term, year, and page
 export const searchOMDB = async ({ searchTerm, year, page }) => {
   let res = await axios.get(`https://www.omdbapi.com/`, {
     params: {
@@ -25,6 +26,7 @@ export const searchOMDB = async ({ searchTerm, year, page }) => {
       };
 };
 
+//Get the information for a movie given its IMDb id
 export const getMovie = async ({ id }) => {
   let res = await axios.get(`https://www.omdbapi.com/`, {
     params: {
@@ -32,7 +34,5 @@ export const getMovie = async ({ id }) => {
       i: id,
     },
   });
-
-  console.log(res.data);
   return res.data;
 };
