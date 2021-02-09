@@ -1,4 +1,3 @@
-import logo from "./shoppies_logo.svg";
 import "./App.css";
 import Interface from "./Interface";
 import Footer from "./components/Footer";
@@ -12,9 +11,8 @@ function App() {
       <div className="App">
         <header className="App-header">
           <Container>
-            <img src={logo} className="App-logo" alt="logo" />
             <h1 className="gold">
-              <i>the shoppies:</i> Nominations
+              <i>The Nominator</i>
             </h1>
             <Interface />
             <Footer />

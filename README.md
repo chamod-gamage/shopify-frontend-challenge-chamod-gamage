@@ -1,8 +1,10 @@
-# The Shoppies: Movie Awards for Entrepreneurs
+# The Nominator:
 
-Inspired by the Shopify Front-End Developer Challenge, I created a web application for you to search for your favourite movies and nominate them for a Shoppie! 
+## Nominate your favourite movies for an award and share your lists with your friends!
 
-Go check it out at https://shoppies-chamod.netlify.app/.
+Inspired by a Front-End Developer Challenge, I created a web application for you to search for your favourite movies and nominate them for an award!
+
+Go check it out at https://the-movie-nominator.netlify.app/.
 
 ## Features
 
@@ -16,7 +18,6 @@ Go check it out at https://shoppies-chamod.netlify.app/.
 - Banner that appears after selecting 5 movies
   - Button to trigger modal that allows user to generate and copy a shareable link for their completed Nomination list
 
-
 ## Future Improvements
 
 - Button for each movie that displays the movie poster and additional information in a modal
@@ -27,7 +28,7 @@ Go check it out at https://shoppies-chamod.netlify.app/.
 ## Tech Stack
 
 - React (bootstrapped with [Create React App](https://github.com/facebook/create-react-app))
-- [OMDB API](http://www.omdbapi.com) 
+- [OMDB API](http://www.omdbapi.com)
 - Hosted on [Netlify](https://www.netlify.com/)
 - Nominees stored in localstorage
 
