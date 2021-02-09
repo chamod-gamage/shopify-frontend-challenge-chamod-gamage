@@ -11,6 +11,7 @@ function App() {
       <div className="App">
         <header className="App-header">
           <Container>
+            <br />
             <h1 className="gold">
               <i>The Nominator</i>
             </h1>
