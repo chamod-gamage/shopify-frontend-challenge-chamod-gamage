@@ -13,7 +13,7 @@ function App() {
           <Container>
             <br />
             <h1 className="gold">
-              <i>The Nominator</i>
+              <i>The Movie Nominator</i>
             </h1>
             <Interface />
             <Footer />
