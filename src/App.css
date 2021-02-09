@@ -8,7 +8,7 @@
 }
 
 .App-header {
-  background-color: #f6f6f6;
+  background-color: #09041d;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -82,7 +82,7 @@ p {
 .box {
   width: 100%;
   border: solid 1px #ffff88;
-  background-color: #fff9e8;
+  background-color: #d6f1f1;
   transition: all 0.5s ease-in-out;
   box-shadow: 0 1px 2px rgba(222, 195, 0, 0.15);
 }
@@ -92,7 +92,7 @@ p {
 }
 
 .box:hover {
-  box-shadow: 0 5px 15px #dec300;
+  box-shadow: 0 5px 15px #79d9f1;
   opacity: 0;
   transition: opacity 0.5s ease-in-out;
   opacity: 1;
@@ -100,7 +100,7 @@ p {
 
 .section-header {
   text-align: left;
-  background-color: #dec300;
+  background-color: #79d9f1;
   width: 100%;
 }
 
