@@ -1,5 +1,5 @@
 import "./App.css";
-import Interface from "./Interface";
+import Interface from "./components/Interface";
 import Footer from "./components/Footer";
 import Container from "react-bootstrap/Container";
 import MomentUtils from "@date-io/moment";

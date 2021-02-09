@@ -1,9 +1,9 @@
-import Search from "./components/Search";
-import Results from "./components/Results";
-import Nominees from "./components/Nominees";
-import LinkDialog from "./components/Nominees/LinkDialog";
-import { searchOMDB, getMovie } from "./api/search";
-import "./App.css";
+import Search from "./Search";
+import Results from "./Results";
+import Nominees from "./Nominees";
+import LinkDialog from "./Nominees/LinkDialog";
+import { searchOMDB, getMovie } from "../api/search";
+import "../App.css";
 import clsx from "clsx";
 import React, { useState, useEffect } from "react";
 
