@@ -1,4 +1,4 @@
-# The Nominator:
+# The Movie Nominator:
 
 ## Nominate your favourite movies for an award and share your lists with your friends!
 
